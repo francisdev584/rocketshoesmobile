@@ -1,12 +1,12 @@
 import React from 'react';
-import {View} from 'react-native';
+import {View, Text} from 'react-native';
 
-const App = () => {
+function App() {
   return (
-    <>
-      <View>Olá React-native</View>
-    </>
+    <View>
+      <Text>Olá React-native</Text>
+    </View>
   );
-};
+}
 
 export default App;
