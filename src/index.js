@@ -1,13 +1,11 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+// import {View, Text} from 'react-native';
 import './config/ReactotronConfig';
 
+import Routes from './routes';
+
 function App() {
-  return (
-    <View>
-      <Text>Olá React-native</Text>
-    </View>
-  );
+  return <Routes />;
 }
 
 export default App;
