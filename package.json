@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android --reset-cache",
+    "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "react": "16.9.0",
-    "react-native": "0.61.4"
+    "react-native": "0.61.4",
+    "reactotron-react-native": "^4.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",
