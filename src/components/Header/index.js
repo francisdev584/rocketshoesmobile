@@ -2,7 +2,7 @@ import React from 'react';
 // import {View} from 'react-native';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import {Wrapper, Container, Logo, BasketContainer, ItemCount} from './styles';
+import { Wrapper, Container, Logo, BasketContainer, ItemCount } from './styles';
 
 function Header() {
   return (
