@@ -1,11 +1,13 @@
 import React from 'react';
-import {createAppContainer} from 'react-navigation';
-import {createStackNavigator} from 'react-navigation-stack';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 
 import colors from './styles/colors';
-import Header from './components/Header';
+
 import Cart from './pages/Cart';
 import Home from './pages/Home';
+
+import Header from './components/Header';
 
 const Routes = createAppContainer(
   createStackNavigator(
@@ -15,6 +17,7 @@ const Routes = createAppContainer(
     },
     {
       defaultNavigationOptions: navigation => ({
+        // eslint-disable-next-line react/jsx-props-no-spreading
         header: <Header {...navigation} />,
       }),
       cardStyle: {
