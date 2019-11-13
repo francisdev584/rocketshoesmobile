@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import colors from '../../styles/colors';
 
 export const Container = styled.View`
   padding: 10px;
@@ -66,4 +67,46 @@ export const ProductSubTotal = styled.Text`
   font-size: 16px;
   flex: 1;
   text-align: right;
+`;
+
+export const TotalContainer = styled.View`
+  margin-top: 30px;
+`;
+
+export const TotalText = styled.Text`
+  text-align: center;
+  color: #999;
+  font-weight: bold;
+`;
+
+export const TotalAmount = styled.Text`
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 30px;
+  font-size: 32px;
+  font-weight: bold;
+`;
+
+export const Order = styled.TouchableOpacity`
+  background: ${colors.primary};
+  padding: 12px;
+  border-radius: 4px;
+`;
+
+export const OrderText = styled.Text`
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  font-size: 14px;
+`;
+
+export const EmptyContainer = styled.View`
+  align-items: center;
+  justify-content: center;
+`;
+
+export const EmptyText = styled.Text`
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 18px;
 `;
