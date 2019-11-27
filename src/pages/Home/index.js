@@ -1,6 +1,7 @@
 import React from 'react';
 import { FlatList } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { connect } from 'react-redux';
 
 import api from '../../services/api';
 import { formatPrice } from '../../util/format';
@@ -17,7 +18,7 @@ import {
   AddButtonText,
 } from './styles';
 
-export default class Home extends React.Component {
+class Home extends React.Component {
   // eslint-disable-next-line react/state-in-constructor
   state = {
     products: [],
@@ -32,13 +33,21 @@ export default class Home extends React.Component {
       .catch(error => console.tron.log(error));
   }
 
+  handleAddProduct = product => {
+    const { dispatch } = this.props;
+    dispatch({
+      type: 'ADD_TO_CART',
+      product,
+    });
+  };
+
   renderProduct = ({ item }) => {
     return (
       <Product key={item.id}>
         <ProductImage source={{ uri: item.image }} />
         <ProductTitle>{item.title}</ProductTitle>
         <ProductPrice>{formatPrice(item.price)}</ProductPrice>
-        <AddButton onPress={() => null}>
+        <AddButton onPress={() => this.handleAddProduct(item)}>
           <ProductAmount>
             <Icon name="add-shopping-cart" color="#FFF" size={20} />
             <ProductAmountText>0</ProductAmountText>
@@ -64,3 +73,5 @@ export default class Home extends React.Component {
     );
   }
 }
+
+export default connect()(Home);
