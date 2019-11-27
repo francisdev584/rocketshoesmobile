@@ -1,6 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { FlatList } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+
+import api from '../../services/api';
+import { formatPrice } from '../../util/format';
 
 import {
   Container,
@@ -14,9 +17,7 @@ import {
   AddButtonText,
 } from './styles';
 
-import api from '../../services/api';
-
-export default class Home extends Component {
+export default class Home extends React.Component {
   // eslint-disable-next-line react/state-in-constructor
   state = {
     products: [],
@@ -36,8 +37,8 @@ export default class Home extends Component {
       <Product key={item.id}>
         <ProductImage source={{ uri: item.image }} />
         <ProductTitle>{item.title}</ProductTitle>
-        <ProductPrice>{item.price}</ProductPrice>
-        <AddButton>
+        <ProductPrice>{formatPrice(item.price)}</ProductPrice>
+        <AddButton onPress={() => null}>
           <ProductAmount>
             <Icon name="add-shopping-cart" color="#FFF" size={20} />
             <ProductAmountText>0</ProductAmountText>
@@ -55,8 +56,8 @@ export default class Home extends Component {
         <FlatList
           horizontal
           data={products}
-          // extraData ={this.pros}
-          keyExtrator={item => String(item.id)}
+          // extraData={this.pros}
+          keyExtractor={item => String(item.id)}
           renderItem={this.renderProduct}
         />
       </Container>

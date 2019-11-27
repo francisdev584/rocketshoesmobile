@@ -27,7 +27,7 @@ import {
 } from './styles';
 
 export default function Cart() {
-  const products = ['total'];
+  const products = [];
 
   return (
     <Container>

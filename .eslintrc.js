@@ -2,7 +2,7 @@ module.exports = {
   env: {
     es6: true,
   },
-  extends: ['airbnb', 'prettier', 'prettier/react'],
+  extends: ['airbnb', 'prettier', 'prettier/react', '@react-native-community'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
