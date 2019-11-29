@@ -30,7 +30,7 @@ import {
   EmptyText,
 } from './styles';
 
-function Cart({ cart, removeFromCart, updateAmount }) {
+function Cart({ cart, total, removeFromCart, updateAmount }) {
   function increment(product) {
     updateAmount(product.id, product.amount + 1);
   }
@@ -54,7 +54,7 @@ function Cart({ cart, removeFromCart, updateAmount }) {
                   />
                   <ProductDetails>
                     <ProductTitle>{product.title}</ProductTitle>
-                    <ProductPrice>{formatPrice(product.price)}</ProductPrice>
+                    <ProductPrice>{product.price}</ProductPrice>
                   </ProductDetails>
                   <ProductDelete onPress={() => removeFromCart(product.id)}>
                     <Icon
@@ -80,14 +80,14 @@ function Cart({ cart, removeFromCart, updateAmount }) {
                       color={colors.primary}
                     />
                   </ProductControlButton>
-                  <ProductSubTotal>500,00</ProductSubTotal>
+                  <ProductSubTotal>{product.subTotal}</ProductSubTotal>
                 </ProductControls>
               </Product>
             ))}
           </Products>
           <TotalContainer>
             <TotalText>TOTAL</TotalText>
-            <TotalAmount>R$1.000,00</TotalAmount>
+            <TotalAmount>{total}</TotalAmount>
             <Order>
               <OrderText>FINALIZAR PEDIDO</OrderText>
             </Order>
@@ -104,7 +104,16 @@ function Cart({ cart, removeFromCart, updateAmount }) {
 }
 
 const mapStateToProps = state => ({
-  cart: state.cart,
+  cart: state.cart.map(product => ({
+    ...product,
+    price: formatPrice(product.price),
+    subTotal: formatPrice(product.price * product.amount),
+  })),
+  total: formatPrice(
+    state.cart.reduce((total, product) => {
+      return total + product.price * product.amount;
+    }, 0)
+  ),
 });
 
 const mapDispatchToProps = dispatch =>
