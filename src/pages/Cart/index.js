@@ -48,7 +48,7 @@ function Cart({ cart, removeFromCart }) {
                     <ProductTitle>{product.title}</ProductTitle>
                     <ProductPrice>{formatPrice(product.price)}</ProductPrice>
                   </ProductDetails>
-                  <ProductDelete onPress={removeFromCart(product.id)}>
+                  <ProductDelete onPress={() => removeFromCart(product.id)}>
                     <Icon
                       name="delete-forever"
                       size={24}

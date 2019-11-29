@@ -5,7 +5,7 @@ export function addToCart(product) {
   };
 }
 
-export function removeToCart(id) {
+export function removeFromCart(id) {
   return {
     type: '@cart/REMOVE',
     id,
