@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { FlatList } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -36,9 +37,9 @@ class Home extends React.Component {
       .catch(error => console.tron.log(error));
   }
 
-  handleAddProduct = product => {
-    const { addToCart } = this.props;
-    addToCart(product);
+  handleAddProduct = id => {
+    const { addToCartRequest } = this.props;
+    addToCartRequest(id);
   };
 
   renderProduct = ({ item }) => {
@@ -48,7 +49,7 @@ class Home extends React.Component {
         <ProductImage source={{ uri: item.image }} />
         <ProductTitle>{item.title}</ProductTitle>
         <ProductPrice>{formatPrice(item.price)}</ProductPrice>
-        <AddButton onPress={() => this.handleAddProduct(item)}>
+        <AddButton onPress={() => this.handleAddProduct(item.id)}>
           <ProductAmount>
             <Icon name="add-shopping-cart" color="#FFF" size={20} />
             <ProductAmountText>{amount[item.id] || 0}</ProductAmountText>
