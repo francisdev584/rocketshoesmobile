@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 // import { View, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -47,14 +48,10 @@ function Cart({ cart, total, removeFromCart, updateAmount }) {
             {cart.map(product => (
               <Product key={product.id}>
                 <ProductInfo>
-                  <ProductImage
-                    source={{
-                      uri: product.image,
-                    }}
-                  />
+                  <ProductImage source={{ uri: product.image }} />
                   <ProductDetails>
                     <ProductTitle>{product.title}</ProductTitle>
-                    <ProductPrice>{product.price}</ProductPrice>
+                    <ProductPrice>{product.priceFormatted}</ProductPrice>
                   </ProductDetails>
                   <ProductDelete onPress={() => removeFromCart(product.id)}>
                     <Icon
@@ -106,7 +103,7 @@ function Cart({ cart, total, removeFromCart, updateAmount }) {
 const mapStateToProps = state => ({
   cart: state.cart.map(product => ({
     ...product,
-    price: formatPrice(product.price),
+    priceFormatted: formatPrice(product.price),
     subTotal: formatPrice(product.price * product.amount),
   })),
   total: formatPrice(
