@@ -1,5 +1,5 @@
 import { call, put, all, takeLatest, select } from 'redux-saga/effects';
-import ToastContainer from '@rimiti/react-native-toastify';
+import { Alert } from 'react-native';
 import api from '../../../services/api';
 import { addToCartSuccess, updateAmount } from './actions';
 import { formatPrice } from '../../../util/format';
@@ -17,8 +17,7 @@ function* addToCart({ id }) {
   const amount = currentAmount + 1;
 
   if (amount > stockAmount) {
-    console.tron.warn('ERRO');
-    ToastContainer.show('Quantidade solicitada fora de estoque');
+    Alert.alert('Quantidade solicitada fora de estoque');
     return;
   }
 

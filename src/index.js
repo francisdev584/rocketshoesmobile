@@ -1,7 +1,6 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
 import { Provider } from 'react-redux';
-import ToastContainer from '@rimiti/react-native-toastify';
 import './config/ReactotronConfig';
 
 import Routes from './routes';
@@ -12,7 +11,6 @@ function App() {
     <Provider store={store}>
       <StatusBar barStyle="light-content" backgroundColor="#191920" />
       <Routes />
-      <ToastContainer autoclose={3000} />
     </Provider>
   );
 }
