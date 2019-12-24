@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 /* eslint-disable react/prop-types */
 import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -43,8 +44,8 @@ export default function Cart() {
   const total = useSelector(
     state =>
       formatPrice(
-        state.cart.reduce((total, product) => {
-          return total + product.price * product.amount;
+        state.cart.reduce((carttotal, product) => {
+          return carttotal + product.price * product.amount;
         }, 0)
       ),
     total
