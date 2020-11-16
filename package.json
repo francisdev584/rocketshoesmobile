@@ -51,6 +51,7 @@
   },
   "resolutions": {
     "logkitty": "^0.7.1",
-    "yargs-parser": "^13.1.2"
+    "yargs-parser": "^13.1.2",
+    "mem": "^4.0.0"
   }
 }
