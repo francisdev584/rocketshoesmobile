@@ -67,11 +67,14 @@ $ cd rocketshoesmobile
 # Install dependencies
 $ yarn install
 
+# Run Server
+$ yarn start
+
 # Run the app (iOS)
-$ react-native run-ios --simulator="iPhone XS Max"
+$ yarn ios
 
 # Run the app (Android)
-$ react-native run-android
+$ yarn android
 ```
 
 ## :memo: License
