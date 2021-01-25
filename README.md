@@ -32,7 +32,7 @@
 </p>
 
 <p align="center">
-  <img alt="Demo on Netlify" src="https://res.cloudinary.com/lukemorales/image/upload/v1563425600/readme_logos/rocketshoes-native_gsjofr.gif">
+  <img alt="Demo on Netlify" src="./public/rocketshoes-mobile-run.gif">
 </p>
 
 ## :rocket: Technologies
@@ -76,10 +76,6 @@ $ yarn ios
 # Run the app (Android)
 $ yarn android
 ```
-
-## :memo: License
-
-This project is under the MIT license. See the [LICENSE](https://github.com/lukemorales/rocketshoes-react-native/blob/master/LICENSE) for more information.
 
 ---
 
