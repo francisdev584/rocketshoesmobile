@@ -5,7 +5,7 @@
 </h1>
 
 <h4 align="center">
-  NetShoes Clone App with React Native and Redux.
+  A footwear e-commerce made with React Native and Redux.
 </h4>
 <p align="center">
   <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/francis584/rocketshoesmobile">
@@ -27,8 +27,7 @@
 
 <p align="center">
   <a href="#rocket-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#information_source-how-to-use">How To Use</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-license">License</a>
+  <a href="#information_source-how-to-use">How To Use</a>&nbsp;&nbsp;&nbsp;
 </p>
 
 <p align="center">
